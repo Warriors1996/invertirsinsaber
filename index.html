@@ -1046,8 +1046,8 @@ calcAcciones();
   // NOTICIAS EN TIEMPO REAL - CoinGecko
 async function loadNews() {
   try {
-    const res = await fetch('https://api.coingecko.com/api/v3/news?per_page=6');
-    const data = await res.json();
+    const res = await fetch('https://cryptonews-api.com/api/v1/category?section=general&items=6&token=DEMO');
+const data = await res.json();
     const grid = document.getElementById('news-grid');
     if (!data.data || data.data.length === 0) {
       grid.innerHTML = '<div style="color:var(--text2);font-size:13px;grid-column:1/-1;text-align:center;">No se pudieron cargar las noticias.</div>';
