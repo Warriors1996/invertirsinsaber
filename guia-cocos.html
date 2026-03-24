@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo usar Cocos Capital desde cero — Invertir sin saber invertir</title>
+<meta name="description" content="Guía completa para usar Cocos Capital desde Argentina. Cómo registrarte, depositar pesos y hacer tu primera inversión.">
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#03060f;--bg2:#080e1a;--bg3:#0d1525;--accent:#3b82f6;--accent2:#2563eb;--accent-light:#60a5fa;--gold:#f5c518;--green:#22c55e;--red:#ef4444;--text:#e4eaf4;--text2:#6b7fa0;--border:rgba(59,130,246,0.1);--border2:rgba(255,255,255,0.06)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Epilogue',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.02) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(3,6,15,0.95);backdrop-filter:blur(24px);z-index:100}
+.logo{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:16px;text-decoration:none;color:var(--text)}
+.logo span{color:var(--accent)}
+.nav-back{color:var(--text2);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;transition:color 0.2s}
+.nav-back:hover{color:var(--accent-light)}
+.nav-cta{background:var(--green);color:#000;padding:8px 18px;border-radius:8px;font-weight:700;font-size:13px;text-decoration:none;font-family:'Cabinet Grotesk',sans-serif}
+.hero{padding:80px 48px 60px;max-width:860px;margin:0 auto;position:relative;z-index:1}
+.guide-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);color:var(--green);padding:6px 16px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:24px;letter-spacing:0.5px}
+.guide-title{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:20px}
+.guide-title span{color:var(--green)}
+.guide-intro{font-size:18px;color:var(--text2);line-height:1.7;margin-bottom:32px;font-weight:300;max-width:660px}
+.guide-meta{display:flex;gap:24px;flex-wrap:wrap}
+.meta-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text2)}
+.meta-item strong{color:var(--text)}
+.content{max-width:860px;margin:0 auto;padding:0 48px 80px;position:relative;z-index:1}
+.toc{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:28px 32px;margin-bottom:48px}
+.toc-title{font-family:'Cabinet Grotesk',sans-serif;font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.toc-list a{color:var(--text2);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:10px;transition:color 0.2s}
+.toc-list a:hover{color:var(--green)}
+.toc-num{background:var(--green);color:#000;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;font-family:'Cabinet Grotesk',sans-serif}
+.section{margin-bottom:56px}
+.section-num{font-family:'Cabinet Grotesk',sans-serif;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.section-num::before{content:'';width:20px;height:1px;background:var(--green)}
+.section h2{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.2}
+.section p{color:var(--text2);margin-bottom:16px;line-height:1.75}
+.section p strong{color:var(--text)}
+.steps{display:flex;flex-direction:column;gap:20px;margin:24px 0}
+.step{display:flex;gap:20px;background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:24px}
+.step-n{width:40px;height:40px;background:var(--green);color:#000;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:16px;flex-shrink:0}
+.step-body h4{font-family:'Cabinet Grotesk',sans-serif;font-size:17px;font-weight:800;margin-bottom:6px}
+.step-body p{font-size:14px;color:var(--text2);line-height:1.6;margin:0}
+.tip{display:flex;gap:8px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;color:var(--green)}
+.callout{border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;gap:14px;align-items:flex-start}
+.callout-warn{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);color:#fca5a5}
+.callout-tip{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);color:var(--green)}
+.callout-info{background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.15);color:var(--accent-light)}
+.callout-icon{font-size:20px;flex-shrink:0;line-height:1}
+.callout-body{font-size:14px;line-height:1.6}
+.callout-body strong{color:inherit}
+.highlight{background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:28px 32px;margin:24px 0}
+.highlight h4{font-family:'Cabinet Grotesk',sans-serif;font-size:18px;font-weight:800;margin-bottom:12px}
+.highlight p{font-size:14px;color:var(--text2);margin:0;line-height:1.65}
+.products-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:24px 0}
+.product-card{background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:20px}
+.product-card h5{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:15px;margin-bottom:6px}
+.product-card p{font-size:13px;color:var(--text2);line-height:1.5;margin:0}
+.product-tag{display:inline-block;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;background:rgba(34,197,94,0.08);color:var(--green);border:1px solid rgba(34,197,94,0.15);margin-bottom:8px}
+.cta-final{background:linear-gradient(135deg,rgba(34,197,94,0.1),rgba(34,197,94,0.02));border:1px solid rgba(34,197,94,0.25);border-radius:20px;padding:40px;text-align:center;margin-top:48px}
+.cta-final h3{font-family:'Cabinet Grotesk',sans-serif;font-size:26px;font-weight:900;margin-bottom:12px;letter-spacing:-0.5px}
+.cta-final p{color:var(--text2);margin-bottom:24px;font-size:15px}
+.btn-green{background:var(--green);color:#000;padding:14px 32px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;font-family:'Cabinet Grotesk',sans-serif;display:inline-block;transition:opacity 0.2s}
+.btn-green:hover{opacity:0.85}
+.guides-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid var(--border2)}
+.guide-link{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:16px 20px;text-decoration:none;color:inherit;flex:1;min-width:200px;transition:border-color 0.2s}
+.guide-link:hover{border-color:rgba(59,130,246,0.3)}
+.guide-link-label{font-size:11px;color:var(--text2);margin-bottom:4px}
+.guide-link-title{font-family:'Cabinet Grotesk',sans-serif;font-size:14px;font-weight:700}
+@media(max-width:768px){nav{padding:14px 20px}.hero,.content{padding-left:20px;padding-right:20px}.hero{padding-top:48px}.products-grid{grid-template-columns:1fr}.step{flex-direction:column;gap:12px}.guides-nav{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Invertir sin saber <span>invertir</span></a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+  <a href="https://www.cocos.capital" target="_blank" class="nav-cta">Abrir Cocos Capital</a>
+</nav>
+
+<div class="hero">
+  <div class="guide-badge">🥥 Guía #2 · Argentina · Nivel principiante</div>
+  <h1 class="guide-title">Cómo usar <span>Cocos Capital</span> desde cero</h1>
+  <p class="guide-intro">Cocos Capital es la app de inversión argentina más moderna. Podés comprar CEDEARs, acciones, bonos y cripto desde el celular, en pesos, sin necesitar saber nada de economía.</p>
+  <div class="guide-meta">
+    <div class="meta-item">⏱ <strong>12 min</strong> de lectura</div>
+    <div class="meta-item">🎯 <strong>Nivel:</strong> Total principiante</div>
+    <div class="meta-item">💰 <strong>Mínimo:</strong> Cualquier monto en $AR</div>
+    <div class="meta-item">🇦🇷 <strong>Regulado:</strong> CNV Argentina</div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="toc">
+    <div class="toc-title">📋 En esta guía</div>
+    <ul class="toc-list">
+      <li><a href="#que-es"><span class="toc-num">1</span> ¿Qué es Cocos Capital y por qué usarla?</a></li>
+      <li><a href="#productos"><span class="toc-num">2</span> ¿Qué podés comprar en Cocos?</a></li>
+      <li><a href="#registro"><span class="toc-num">3</span> Cómo registrarte paso a paso</a></li>
+      <li><a href="#depositar"><span class="toc-num">4</span> Cómo depositar pesos</a></li>
+      <li><a href="#primera-inversion"><span class="toc-num">5</span> Tu primera inversión</a></li>
+      <li><a href="#estrategia"><span class="toc-num">6</span> ¿Qué comprar si no sabés nada?</a></li>
+    </ul>
+  </div>
+
+  <div class="section" id="que-es">
+    <div class="section-num">Sección 1</div>
+    <h2>¿Qué es Cocos Capital y por qué usarla?</h2>
+    <p>Cocos Capital es una <strong>fintech argentina regulada por la Comisión Nacional de Valores (CNV)</strong>. Eso significa que opera dentro del sistema financiero legal argentino, con todas las protecciones que eso implica.</p>
+    <p>A diferencia de Binance o Bybit que son exchanges internacionales, Cocos es <strong>100% argentina</strong> — el soporte está en español, el equipo está en Argentina y podés depositar directamente desde tu cuenta bancaria en pesos sin ningún intermediario.</p>
+
+    <div class="highlight">
+      <h4>🥥 ¿Por qué Cocos y no otra app?</h4>
+      <p>En los últimos años aparecieron muchas apps de inversión en Argentina. Cocos se destaca por tener la interfaz más simple, comisiones muy bajas, una app de celular muy bien diseñada y el mayor crecimiento de usuarios en 2024-2025. Es especialmente popular entre gente joven que invierte por primera vez.</p>
+    </div>
+  </div>
+
+  <div class="section" id="productos">
+    <div class="section-num">Sección 2</div>
+    <h2>¿Qué podés comprar en Cocos?</h2>
+    <p>Cocos no es solo para acciones. Tiene una variedad de productos que te permite armar una cartera diversificada sin salir de la app:</p>
+
+    <div class="products-grid">
+      <div class="product-card">
+        <div class="product-tag">🌟 Más popular</div>
+        <h5>CEDEARs</h5>
+        <p>Acciones de Apple, Google, Tesla, Amazon y más de 300 empresas extranjeras, compradas en pesos argentinos. Se mueven con el dólar.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">🇦🇷 Local</div>
+        <h5>Acciones argentinas</h5>
+        <p>YPF, Mercado Libre, Banco Galicia, Pampa Energía y más empresas que cotizan en la Bolsa de Buenos Aires.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">💵 Dolarizate</div>
+        <h5>Bonos en dólares</h5>
+        <p>Bonos del gobierno argentino que pagan en dólares. Una forma de ahorrar en moneda extranjera dentro del sistema local.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">📈 Fácil</div>
+        <h5>Fondos comunes</h5>
+        <p>Invertís en una canasta de activos manejada por expertos. Ideal si no querés elegir qué comprar — ponés la plata y ellos la administran.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">₿ Cripto</div>
+        <h5>Criptomonedas</h5>
+        <p>Bitcoin, Ethereum, USDT y otras criptos disponibles directamente desde la app de Cocos.</p>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">💰 Sin riesgo</div>
+        <h5>Cauciones / Plazo fijo</h5>
+        <p>Opciones más conservadoras para hacer rendir los pesos sin exponerlos a la volatilidad del mercado.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="registro">
+    <div class="section-num">Sección 3</div>
+    <h2>Cómo registrarte paso a paso</h2>
+    <p>El proceso de registro en Cocos es 100% digital y tarda menos de 10 minutos desde el celular.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <h4>Descargá la app</h4>
+          <p>Buscá "Cocos Capital" en la App Store (iPhone) o Google Play (Android). Es gratis. También podés operar desde la web en cocos.capital.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <h4>Creá tu cuenta</h4>
+          <p>Ingresá tu email y creá una contraseña segura. Vas a recibir un email de confirmación — hacé clic en el link para verificar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <h4>Completá tus datos personales</h4>
+          <p>Nombre, apellido, fecha de nacimiento, CUIL y domicilio. Es obligatorio porque Cocos está regulada y debe identificar a sus usuarios.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-body">
+          <h4>Verificá tu identidad con el DNI</h4>
+          <p>Sacá una foto del frente y dorso de tu DNI. Después tomá una selfie. El proceso es automático y generalmente se aprueba en minutos.</p>
+          <div class="tip">📸 Usá buena iluminación y asegurate que todos los datos del DNI se lean claramente.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">5</div>
+        <div class="step-body">
+          <h4>Abrí tu cuenta comitente</h4>
+          <p>Cocos abre automáticamente una <strong>"cuenta comitente"</strong> en el Mercado de Valores. Es como tu cuenta bancaria pero para invertir en bolsa. Sin esto no podés comprar acciones ni CEDEARs.</p>
+          <div class="tip">💡 No te asustes con el término "cuenta comitente" — es automático y gratuito. Cocos lo hace por vos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-info">
+      <div class="callout-icon">ℹ️</div>
+      <div class="callout-body"><strong>¿Cuánto tarda la aprobación?</strong> La verificación de identidad generalmente tarda entre 5 y 30 minutos durante el horario hábil. En algunos casos puede tardar hasta 24 horas. Te notifican por email cuando está lista.</div>
+    </div>
+  </div>
+
+  <div class="section" id="depositar">
+    <div class="section-num">Sección 4</div>
+    <h2>Cómo depositar pesos</h2>
+    <p>Depositar en Cocos es muy simple — es una transferencia bancaria común desde tu cuenta en Argentina.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <h4>Andá a "Depositar" en la app</h4>
+          <p>En la pantalla principal encontrás el botón "Depositar". Tocalo y vas a ver los datos para hacer la transferencia.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <h4>Copiá el CBU/CVU de Cocos</h4>
+          <p>Cocos te da un CBU único para tu cuenta. Copialo o guardalo como contacto en tu app bancaria.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <h4>Hacé una transferencia desde tu banco o Mercado Pago</h4>
+          <p>Entrá a tu app bancaria (Santander, Galicia, BBVA, etc.) o Mercado Pago y hacé una transferencia al CBU de Cocos. Podés transferir desde $1 en adelante.</p>
+          <div class="tip">⚡ Las transferencias bancarias suelen acreditarse en minutos durante días hábiles. Los fines de semana pueden tardar hasta el lunes.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-body">
+          <h4>El dinero aparece en tu cuenta</h4>
+          <p>Cuando se acredita, ves el saldo en pesos en tu cuenta de Cocos. Ya podés invertir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="primera-inversion">
+    <div class="section-num">Sección 5</div>
+    <h2>Tu primera inversión</h2>
+    <p>Con pesos en tu cuenta, estás listo para invertir. Acá te mostramos cómo comprar un CEDEAR de Apple como ejemplo:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <h4>Andá a "Invertir" o "Mercado"</h4>
+          <p>En la app encontrás una barra de búsqueda. Escribí "AAPL" (el ticker de Apple) o simplemente "Apple".</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <h4>Seleccioná el CEDEAR de Apple (AAPL)</h4>
+          <p>Vas a ver el precio actual en pesos y un gráfico de cómo se movió el precio últimamente. No necesitás entenderlo para comprar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <h4>Tocá "Comprar" e ingresá el monto</h4>
+          <p>Podés comprar por monto en pesos (ej: $10.000 ARS) o por cantidad de CEDEARs. Para empezar es más fácil ingresar el monto en pesos.</p>
+          <div class="tip">💡 No necesitás comprar un CEDEAR entero. Podés comprar fracciones con cualquier monto.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-body">
+          <h4>Confirmá la compra</h4>
+          <p>Revisá el resumen — precio, cantidad y comisión — y confirmá. La operación se ejecuta en segundos durante el horario de mercado (lunes a viernes, 11hs a 17hs Argentina).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-warn">
+      <div class="callout-icon">⏰</div>
+      <div class="callout-body"><strong>Horario de mercado:</strong> A diferencia de las criptomonedas que operan 24/7, las acciones y CEDEARs solo se pueden comprar y vender de lunes a viernes entre las 11:00 y 17:00 hs (horario Argentina). Fuera de ese horario podés ingresar órdenes que se ejecutan cuando abre el mercado.</div>
+    </div>
+  </div>
+
+  <div class="section" id="estrategia">
+    <div class="section-num">Sección 6</div>
+    <h2>¿Qué comprar si no sabés nada?</h2>
+    <p>Si sos nuevo y no querés complicarte eligiendo qué comprar, acá van tres estrategias simples ordenadas de menor a mayor riesgo:</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">🟢</div>
+        <div class="step-body">
+          <h4>Opción conservadora — Fondo en dólares</h4>
+          <p>Buscá un Fondo Común de Inversión en dólares dentro de Cocos. Ponés los pesos, el fondo los convierte a dólares y los invierte en bonos seguros. Rendimiento moderado, riesgo bajo.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">🟡</div>
+        <div class="step-body">
+          <h4>Opción moderada — CEDEAR del S&P 500 (SPY o VOO)</h4>
+          <p>El CEDEAR del SPY replica el índice S&P 500 — invertís en las 500 empresas más grandes de EE.UU. de una sola vez. Históricamente sube un 10% anual en promedio. Ideal para largo plazo.</p>
+          <div class="tip">💡 Buscá "SPY" en Cocos. Es el CEDEAR más recomendado para principiantes.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">🔴</div>
+        <div class="step-body">
+          <h4>Opción más activa — CEDEARs de empresas individuales</h4>
+          <p>Apple (AAPL), Google (GOOGL), NVIDIA (NVDA). Mayor potencial de ganancia pero también más volatilidad. Solo si estás dispuesto a ver el valor subir y bajar sin entrar en pánico.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight">
+      <h4>💡 El consejo más importante</h4>
+      <p>Sea lo que sea que decidas comprar, <strong>invertí un monto fijo cada mes</strong> sin importar si el precio subió o bajó. Esta estrategia se llama DCA (Dollar Cost Averaging) y es la favorita de los inversores más exitosos del mundo, incluyendo Warren Buffett. Con el tiempo, tu precio promedio de compra se equilibra y reducís el riesgo de haber comprado "en el peor momento".</p>
+    </div>
+  </div>
+
+  <div class="cta-final">
+    <h3>¿Listo para abrir tu cuenta en Cocos? 🥥</h3>
+    <p>Es gratis, 100% digital y podés empezar con cualquier monto en pesos desde tu celular.</p>
+    <a href="https://www.cocos.capital" target="_blank" class="btn-green">Abrir cuenta en Cocos Capital →</a>
+    <p style="margin-top:16px;font-size:12px;color:var(--text2);">Regulado por la Comisión Nacional de Valores (CNV) · Argentina</p>
+  </div>
+
+  <div class="guides-nav">
+    <div style="width:100%;font-family:'Cabinet Grotesk',sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:8px;">Otras guías</div>
+    <a href="guia-bitcoin.html" class="guide-link"><div class="guide-link-label">Guía #1</div><div class="guide-link-title">← Cómo comprar Bitcoin desde Argentina</div></a>
+    <a href="guia-cedears.html" class="guide-link"><div class="guide-link-label">Guía #3</div><div class="guide-link-title">Qué son los CEDEARs y cómo comprarlos →</div></a>
+    <a href="guia-sp500.html" class="guide-link"><div class="guide-link-label">Guía #6</div><div class="guide-link-title">Qué es el S&P 500 y cómo invertir →</div></a>
+  </div>
+</div>
+
+<footer style="border-top:1px solid var(--border2);padding:32px 48px;text-align:center;position:relative;z-index:1;">
+  <p style="font-size:13px;color:var(--text2);">© 2026 Invertir sin saber invertir · Hecho con ❤️ by <strong style="color:var(--accent-light)">JuanFarias</strong></p>
+  <p style="font-size:11px;color:rgba(107,127,160,0.5);margin-top:8px;">Este contenido es solo informativo y no constituye asesoramiento financiero.</p>
+</footer>
+</body>
+</html>
