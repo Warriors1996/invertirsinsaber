@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qué son los CEDEARs y cómo comprarlos — Invertir sin saber invertir</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#03060f;--bg2:#080e1a;--bg3:#0d1525;--accent:#3b82f6;--accent2:#2563eb;--accent-light:#60a5fa;--gold:#f5c518;--green:#22c55e;--red:#ef4444;--text:#e4eaf4;--text2:#6b7fa0;--border:rgba(59,130,246,0.1);--border2:rgba(255,255,255,0.06)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Epilogue',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(59,130,246,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,0.02) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(3,6,15,0.95);backdrop-filter:blur(24px);z-index:100}
+.logo{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:16px;text-decoration:none;color:var(--text)}.logo span{color:var(--accent)}
+.nav-back{color:var(--text2);text-decoration:none;font-size:13px}.nav-back:hover{color:var(--accent-light)}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 18px;border-radius:8px;font-weight:700;font-size:13px;text-decoration:none;font-family:'Cabinet Grotesk',sans-serif}
+.hero{padding:80px 48px 60px;max-width:860px;margin:0 auto;position:relative;z-index:1}
+.guide-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);color:var(--gold);padding:6px 16px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:24px}
+.guide-title{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:20px}
+.guide-title span{color:var(--gold)}
+.guide-intro{font-size:18px;color:var(--text2);line-height:1.7;margin-bottom:32px;font-weight:300;max-width:660px}
+.guide-meta{display:flex;gap:24px;flex-wrap:wrap}
+.meta-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text2)}.meta-item strong{color:var(--text)}
+.content{max-width:860px;margin:0 auto;padding:0 48px 80px;position:relative;z-index:1}
+.toc{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:28px 32px;margin-bottom:48px}
+.toc-title{font-family:'Cabinet Grotesk',sans-serif;font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.toc-list a{color:var(--text2);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:10px;transition:color 0.2s}
+.toc-list a:hover{color:var(--gold)}
+.toc-num{background:var(--gold);color:#000;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+.section{margin-bottom:56px}
+.section-num{font-family:'Cabinet Grotesk',sans-serif;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.section-num::before{content:'';width:20px;height:1px;background:var(--gold)}
+.section h2{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.2}
+.section p{color:var(--text2);margin-bottom:16px;line-height:1.75}.section p strong{color:var(--text)}
+.steps{display:flex;flex-direction:column;gap:20px;margin:24px 0}
+.step{display:flex;gap:20px;background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:24px}
+.step-n{width:40px;height:40px;background:var(--gold);color:#000;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:16px;flex-shrink:0}
+.step-body h4{font-family:'Cabinet Grotesk',sans-serif;font-size:17px;font-weight:800;margin-bottom:6px}
+.step-body p{font-size:14px;color:var(--text2);line-height:1.6;margin:0}
+.tip{display:flex;gap:8px;background:rgba(245,197,24,0.06);border:1px solid rgba(245,197,24,0.15);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;color:var(--gold)}
+.callout{border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;gap:14px;align-items:flex-start}
+.callout-warn{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);color:#fca5a5}
+.callout-tip{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);color:var(--green)}
+.callout-info{background:rgba(245,197,24,0.06);border:1px solid rgba(245,197,24,0.15);color:var(--gold)}
+.callout-icon{font-size:20px;flex-shrink:0;line-height:1}
+.callout-body{font-size:14px;line-height:1.6}.callout-body strong{color:inherit}
+.cedears-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.cedears-table th{background:var(--bg2);padding:12px 16px;text-align:left;font-family:'Cabinet Grotesk',sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text2);border-bottom:1px solid var(--border2)}
+.cedears-table td{padding:14px 16px;border-bottom:1px solid var(--border2);vertical-align:middle}
+.cedears-table tr:hover td{background:rgba(245,197,24,0.02)}
+.cedears-table tr:last-child td{border-bottom:none}
+.ticker-badge{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:13px;background:rgba(245,197,24,0.1);color:var(--gold);padding:3px 10px;border-radius:6px}
+.highlight{background:linear-gradient(135deg,rgba(245,197,24,0.08),rgba(245,197,24,0.02));border:1px solid rgba(245,197,24,0.2);border-radius:16px;padding:28px 32px;margin:24px 0}
+.highlight h4{font-family:'Cabinet Grotesk',sans-serif;font-size:18px;font-weight:800;margin-bottom:12px}
+.highlight p{font-size:14px;color:var(--text2);margin:0;line-height:1.65}
+.cta-final{background:linear-gradient(135deg,rgba(245,197,24,0.08),rgba(245,197,24,0.02));border:1px solid rgba(245,197,24,0.2);border-radius:20px;padding:40px;text-align:center;margin-top:48px}
+.cta-final h3{font-family:'Cabinet Grotesk',sans-serif;font-size:26px;font-weight:900;margin-bottom:12px}
+.cta-final p{color:var(--text2);margin-bottom:24px;font-size:15px}
+.btn-gold{background:var(--gold);color:#000;padding:14px 32px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;font-family:'Cabinet Grotesk',sans-serif;display:inline-block}
+.guides-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid var(--border2)}
+.guide-link{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:16px 20px;text-decoration:none;color:inherit;flex:1;min-width:200px;transition:border-color 0.2s}
+.guide-link:hover{border-color:rgba(59,130,246,0.3)}
+.guide-link-label{font-size:11px;color:var(--text2);margin-bottom:4px}
+.guide-link-title{font-family:'Cabinet Grotesk',sans-serif;font-size:14px;font-weight:700}
+@media(max-width:768px){nav{padding:14px 20px}.hero,.content{padding-left:20px;padding-right:20px}.hero{padding-top:48px}.step{flex-direction:column;gap:12px}.guides-nav{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Invertir sin saber <span>invertir</span></a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+  <a href="https://www.cocos.capital" target="_blank" class="nav-cta">Abrir Cocos Capital</a>
+</nav>
+
+<div class="hero">
+  <div class="guide-badge">📊 Guía #3 · Argentina · Nivel principiante</div>
+  <h1 class="guide-title">Qué son los <span>CEDEARs</span> y cómo comprarlos</h1>
+  <p class="guide-intro">Los CEDEARs son la forma más fácil de invertir en Apple, Google o Tesla desde Argentina, en pesos, sin necesitar una cuenta en el exterior. Te explicamos todo desde cero.</p>
+  <div class="guide-meta">
+    <div class="meta-item">⏱ <strong>10 min</strong> de lectura</div>
+    <div class="meta-item">🎯 <strong>Nivel:</strong> Total principiante</div>
+    <div class="meta-item">💰 <strong>Mínimo:</strong> Cualquier monto en $AR</div>
+    <div class="meta-item">🇦🇷 <strong>Solo:</strong> Argentina</div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="toc">
+    <div class="toc-title">📋 En esta guía</div>
+    <ul class="toc-list">
+      <li><a href="#que-son"><span class="toc-num">1</span> ¿Qué son los CEDEARs exactamente?</a></li>
+      <li><a href="#ventajas"><span class="toc-num">2</span> Ventajas de invertir en CEDEARs</a></li>
+      <li><a href="#mejores"><span class="toc-num">3</span> Los mejores CEDEARs para principiantes</a></li>
+      <li><a href="#como-comprar"><span class="toc-num">4</span> Cómo comprar tu primer CEDEAR</a></li>
+      <li><a href="#riesgos"><span class="toc-num">5</span> Riesgos que tenés que conocer</a></li>
+    </ul>
+  </div>
+
+  <div class="section" id="que-son">
+    <div class="section-num">Sección 1</div>
+    <h2>¿Qué son los CEDEARs exactamente?</h2>
+    <p>CEDEAR significa <strong>Certificado de Depósito Argentino</strong>. Es un instrumento financiero que te permite comprar una porción de una acción extranjera (como Apple o Google) desde Argentina, en pesos, a través de la Bolsa de Buenos Aires.</p>
+    <p>Funciona así: un banco o entidad financiera compra acciones reales de Apple en la bolsa de Nueva York. Después emite "certificados" que representan esas acciones y los vende en Argentina en pesos. Vos comprás esos certificados y tenés exposición al precio de Apple en dólares.</p>
+
+    <div class="highlight">
+      <h4>📌 En palabras simples</h4>
+      <p>Es como si le dieras pesos a alguien de confianza, él comprara dólares y acciones de Apple con esos pesos, y te diera un papelito que dice "tenés tu parte de Apple". Cuando Apple sube, tu papelito vale más. Y como está en dólares, también te protege de la devaluación del peso.</p>
+    </div>
+  </div>
+
+  <div class="section" id="ventajas">
+    <div class="section-num">Sección 2</div>
+    <h2>Ventajas de invertir en CEDEARs</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">✓</div>
+        <div class="step-body">
+          <h4>Te dolarizás sin comprar dólares</h4>
+          <p>El precio de los CEDEARs se mueve con el dólar. Si el peso se devalúa, tu inversión en pesos sube automáticamente para compensar. Es una de las formas más populares de proteger los ahorros en Argentina.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">✓</div>
+        <div class="step-body">
+          <h4>Comprás con cualquier monto en pesos</h4>
+          <p>Una acción de Apple en EE.UU. cuesta ~$218 USD. Con CEDEARs podés comprar una fracción por mucho menos. Con $5.000 pesos ya podés tener tu porción de Apple.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">✓</div>
+        <div class="step-body">
+          <h4>Sin cuenta en el exterior</h4>
+          <p>No necesitás abrir una cuenta en EE.UU., no necesitás dólares en efectivo, no necesitás pasar por el cepo. Todo desde tu banco o app local.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">✓</div>
+        <div class="step-body">
+          <h4>Regulado y seguro</h4>
+          <p>Los CEDEARs operan dentro del sistema financiero argentino regulado por la CNV. No es cripto, no es informal — es igual de legal que un plazo fijo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="mejores">
+    <div class="section-num">Sección 3</div>
+    <h2>Los mejores CEDEARs para principiantes</h2>
+    <p>Hay más de 300 CEDEARs disponibles en Argentina. Acá van los más recomendados para empezar:</p>
+
+    <div style="overflow-x:auto">
+      <table class="cedears-table">
+        <thead>
+          <tr><th>Ticker</th><th>Empresa</th><th>Por qué recomendado</th><th>Riesgo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="ticker-badge">SPY</span></td><td><strong>S&P 500 ETF</strong></td><td>Las 500 empresas más grandes de EE.UU. — máxima diversificación</td><td>🟡 Medio</td></tr>
+          <tr><td><span class="ticker-badge">AAPL</span></td><td><strong>Apple</strong></td><td>La empresa más valiosa del mundo, muy estable a largo plazo</td><td>🟡 Medio</td></tr>
+          <tr><td><span class="ticker-badge">MSFT</span></td><td><strong>Microsoft</strong></td><td>Líder en software, cloud y IA. Crecimiento constante</td><td>🟡 Medio</td></tr>
+          <tr><td><span class="ticker-badge">GOOGL</span></td><td><strong>Google (Alphabet)</strong></td><td>Domina la búsqueda online y YouTube. Negocio muy sólido</td><td>🟡 Medio</td></tr>
+          <tr><td><span class="ticker-badge">NVDA</span></td><td><strong>NVIDIA</strong></td><td>Líder en chips para IA. Mayor crecimiento pero más volátil</td><td>🔴 Alto</td></tr>
+          <tr><td><span class="ticker-badge">AMZN</span></td><td><strong>Amazon</strong></td><td>E-commerce + AWS cloud. Negocio muy diversificado</td><td>🟡 Medio</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-info">
+      <div class="callout-icon">⭐</div>
+      <div class="callout-body"><strong>Recomendación #1 para principiantes:</strong> El SPY (S&P 500) es la opción más inteligente si no sabés qué elegir. Con un solo CEDEAR invertís en las 500 empresas más grandes de EE.UU. al mismo tiempo. Históricamente sube ~10% al año en dólares.</div>
+    </div>
+  </div>
+
+  <div class="section" id="como-comprar">
+    <div class="section-num">Sección 4</div>
+    <h2>Cómo comprar tu primer CEDEAR</h2>
+    <p>Podés comprar CEDEARs desde varias apps argentinas. Las más usadas son <strong>Cocos Capital</strong>, Bull Market, IOL (Invertir Online) y Portfolio Personal.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <h4>Abrí una cuenta en Cocos Capital</h4>
+          <p>Es la app más fácil para principiantes. El proceso de apertura es 100% digital y tarda menos de 10 minutos. (Ver Guía #2 para el paso a paso completo)</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <h4>Depositá pesos desde tu banco</h4>
+          <p>Hacé una transferencia al CBU de Cocos desde tu home banking. Se acredita en minutos.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <h4>Buscá el CEDEAR que querés</h4>
+          <p>En la app de Cocos, andá a "Mercado" y escribí el ticker en el buscador. Por ejemplo: "SPY" para el S&P 500 o "AAPL" para Apple.</p>
+          <div class="tip">💡 Tip: También podés buscar por el nombre de la empresa en español — la app lo reconoce.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-body">
+          <h4>Ingresá el monto y comprá</h4>
+          <p>Tocá "Comprar", ingresá cuántos pesos querés invertir y confirmá. La operación se ejecuta durante el horario de mercado (lunes a viernes, 11hs a 17hs).</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">5</div>
+        <div class="step-body">
+          <h4>¡Listo! Ya sos dueño de una porción de esa empresa</h4>
+          <p>El CEDEAR aparece en tu cartera. Podés ver cómo se mueve el precio en tiempo real. No te preocupes por las variaciones diarias si tu objetivo es el largo plazo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="riesgos">
+    <div class="section-num">Sección 5</div>
+    <h2>Riesgos que tenés que conocer</h2>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">⚠</div>
+        <div class="step-body">
+          <h4>Riesgo de mercado — el precio puede bajar</h4>
+          <p>Las acciones suben y bajan. Apple puede caer 30% en un año malo. Si necesitás el dinero a corto plazo, los CEDEARs no son la mejor opción. Son ideales para mantener más de 3-5 años.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">⚠</div>
+        <div class="step-body">
+          <h4>Riesgo del tipo de cambio</h4>
+          <p>Los CEDEARs se mueven con el "dólar implícito" o CCL (contado con liquidación), no con el dólar oficial. Esto puede generar diferencias con el precio real en dólares.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">⚠</div>
+        <div class="step-body">
+          <h4>No podés operar fuera del horario de mercado</h4>
+          <p>A diferencia del cripto que opera 24/7, los CEDEARs solo se compran y venden de lunes a viernes entre las 11hs y 17hs. Si algo pasa de noche o el fin de semana, tenés que esperar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-tip">
+      <div class="callout-icon">✅</div>
+      <div class="callout-body"><strong>La clave para reducir el riesgo:</strong> Invertí a largo plazo (mínimo 3-5 años), comprá de forma regular cada mes sin importar el precio, y nunca pongas todo en una sola empresa. Diversificá entre varios CEDEARs o usá el SPY que ya viene diversificado.</div>
+    </div>
+  </div>
+
+  <div class="cta-final">
+    <h3>¿Listo para comprar tu primer CEDEAR? 📊</h3>
+    <p>Abrí tu cuenta en Cocos Capital y empezá con cualquier monto en pesos. Simple, rápido y 100% desde el celular.</p>
+    <a href="https://www.cocos.capital" target="_blank" class="btn-gold">Abrir cuenta en Cocos Capital →</a>
+  </div>
+
+  <div class="guides-nav">
+    <div style="width:100%;font-family:'Cabinet Grotesk',sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:8px;">Otras guías</div>
+    <a href="guia-bitcoin.html" class="guide-link"><div class="guide-link-label">Guía #1</div><div class="guide-link-title">← Cómo comprar Bitcoin</div></a>
+    <a href="guia-cocos.html" class="guide-link"><div class="guide-link-label">Guía #2</div><div class="guide-link-title">← Cómo usar Cocos Capital</div></a>
+    <a href="guia-trading.html" class="guide-link"><div class="guide-link-label">Guía #4</div><div class="guide-link-title">Cómo leer un gráfico de trading →</div></a>
+  </div>
+</div>
+
+<footer style="border-top:1px solid var(--border2);padding:32px 48px;text-align:center;position:relative;z-index:1;">
+  <p style="font-size:13px;color:var(--text2);">© 2026 Invertir sin saber invertir · Hecho con ❤️ by <strong style="color:var(--accent-light)">JuanFarias</strong></p>
+  <p style="font-size:11px;color:rgba(107,127,160,0.5);margin-top:8px;">Este contenido es solo informativo y no constituye asesoramiento financiero.</p>
+</footer>
+</body>
+</html>

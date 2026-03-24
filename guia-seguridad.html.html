@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo proteger tus criptomonedas — Invertir sin saber invertir</title>
+<meta name="description" content="Guía completa de seguridad para criptomonedas. Cómo proteger tu Bitcoin y evitar estafas, hackeos y pérdidas.">
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Epilogue:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#03060f;--bg2:#080e1a;--bg3:#0d1525;--accent:#3b82f6;--accent2:#2563eb;--accent-light:#60a5fa;--gold:#f5c518;--green:#22c55e;--red:#ef4444;--text:#e4eaf4;--text2:#6b7fa0;--border:rgba(59,130,246,0.1);--border2:rgba(255,255,255,0.06)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Epilogue',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(239,68,68,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(239,68,68,0.015) 1px,transparent 1px);background-size:64px 64px;pointer-events:none;z-index:0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(3,6,15,0.95);backdrop-filter:blur(24px);z-index:100}
+.logo{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:16px;text-decoration:none;color:var(--text)}.logo span{color:var(--accent)}
+.nav-back{color:var(--text2);text-decoration:none;font-size:13px}.nav-back:hover{color:var(--accent-light)}
+.nav-cta{background:var(--red);color:#fff;padding:8px 18px;border-radius:8px;font-weight:700;font-size:13px;text-decoration:none;font-family:'Cabinet Grotesk',sans-serif}
+.hero{padding:80px 48px 60px;max-width:860px;margin:0 auto;position:relative;z-index:1}
+.guide-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);color:#fca5a5;padding:6px 16px;border-radius:100px;font-size:12px;font-weight:600;margin-bottom:24px}
+.guide-title{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:900;letter-spacing:-2px;line-height:1.05;margin-bottom:20px}
+.guide-title span{color:#fca5a5}
+.guide-intro{font-size:18px;color:var(--text2);line-height:1.7;margin-bottom:32px;font-weight:300;max-width:660px}
+.guide-meta{display:flex;gap:24px;flex-wrap:wrap}
+.meta-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text2)}.meta-item strong{color:var(--text)}
+.content{max-width:860px;margin:0 auto;padding:0 48px 80px;position:relative;z-index:1}
+.toc{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:28px 32px;margin-bottom:48px}
+.toc-title{font-family:'Cabinet Grotesk',sans-serif;font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#fca5a5;margin-bottom:16px}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.toc-list a{color:var(--text2);text-decoration:none;font-size:14px;display:flex;align-items:center;gap:10px;transition:color 0.2s}.toc-list a:hover{color:#fca5a5}
+.toc-num{background:var(--red);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+.section{margin-bottom:56px}
+.section-num{font-family:'Cabinet Grotesk',sans-serif;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.section-num::before{content:'';width:20px;height:1px;background:var(--red)}
+.section h2{font-family:'Cabinet Grotesk',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.2}
+.section p{color:var(--text2);margin-bottom:16px;line-height:1.75}.section p strong{color:var(--text)}
+.steps{display:flex;flex-direction:column;gap:20px;margin:24px 0}
+.step{display:flex;gap:20px;background:var(--bg2);border:1px solid var(--border2);border-radius:14px;padding:24px}
+.step-n{width:40px;height:40px;background:var(--accent);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:16px;flex-shrink:0}
+.step-n.red{background:var(--red)}
+.step-n.green{background:var(--green);color:#000}
+.step-body h4{font-family:'Cabinet Grotesk',sans-serif;font-size:17px;font-weight:800;margin-bottom:6px}
+.step-body p{font-size:14px;color:var(--text2);line-height:1.6;margin:0}
+.tip{display:flex;gap:8px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;color:var(--green)}
+.warn{display:flex;gap:8px;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);border-radius:8px;padding:10px 14px;margin-top:10px;font-size:13px;color:#fca5a5}
+.callout{border-radius:12px;padding:20px 24px;margin:24px 0;display:flex;gap:14px}
+.callout-warn{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.15);color:#fca5a5}
+.callout-tip{background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);color:var(--green)}
+.callout-info{background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.15);color:var(--accent-light)}
+.callout-icon{font-size:20px;flex-shrink:0;line-height:1}
+.callout-body{font-size:14px;line-height:1.6}.callout-body strong{color:inherit}
+.highlight{background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border:1px solid rgba(34,197,94,0.2);border-radius:16px;padding:28px 32px;margin:24px 0}
+.highlight h4{font-family:'Cabinet Grotesk',sans-serif;font-size:18px;font-weight:800;margin-bottom:12px}
+.highlight p{font-size:14px;color:var(--text2);margin:0;line-height:1.65}
+.scam-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.scam-card{background:rgba(239,68,68,0.04);border:1px solid rgba(239,68,68,0.12);border-radius:14px;padding:20px}
+.scam-card h5{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:15px;margin-bottom:8px;color:#fca5a5}
+.scam-card p{font-size:13px;color:var(--text2);line-height:1.6;margin:0}
+.checklist{display:flex;flex-direction:column;gap:10px;margin:24px 0}
+.check-item{display:flex;gap:12px;align-items:flex-start;background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:16px 20px}
+.check-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.check-body h5{font-family:'Cabinet Grotesk',sans-serif;font-size:15px;font-weight:800;margin-bottom:4px}
+.check-body p{font-size:13px;color:var(--text2);line-height:1.5;margin:0}
+.cta-final{background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border:1px solid rgba(34,197,94,0.2);border-radius:20px;padding:40px;text-align:center;margin-top:48px}
+.cta-final h3{font-family:'Cabinet Grotesk',sans-serif;font-size:26px;font-weight:900;margin-bottom:12px}
+.cta-final p{color:var(--text2);margin-bottom:24px;font-size:15px}
+.btn-blue{background:var(--accent);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;font-family:'Cabinet Grotesk',sans-serif;display:inline-block;transition:background 0.2s}.btn-blue:hover{background:var(--accent2)}
+.guides-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid var(--border2)}
+.guide-link{background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:16px 20px;text-decoration:none;color:inherit;flex:1;min-width:200px;transition:border-color 0.2s}.guide-link:hover{border-color:rgba(59,130,246,0.3)}
+.guide-link-label{font-size:11px;color:var(--text2);margin-bottom:4px}
+.guide-link-title{font-family:'Cabinet Grotesk',sans-serif;font-size:14px;font-weight:700}
+@media(max-width:768px){nav{padding:14px 20px}.hero,.content{padding-left:20px;padding-right:20px}.hero{padding-top:48px}.step{flex-direction:column;gap:12px}.scam-grid{grid-template-columns:1fr}.guides-nav{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Invertir sin saber <span>invertir</span></a>
+  <a href="index.html" class="nav-back">← Volver al inicio</a>
+  <a href="https://www.binance.com/es/register?ref=TUREFCODE" target="_blank" class="nav-cta">Cuenta segura en Binance</a>
+</nav>
+
+<div class="hero">
+  <div class="guide-badge">🔐 Guía #5 · Seguridad · Imprescindible</div>
+  <h1 class="guide-title">Cómo <span>proteger</span> tus criptomonedas</h1>
+  <p class="guide-intro">En cripto, vos sos tu propio banco. Eso significa que si alguien te roba o perdés acceso a tu cuenta, nadie puede ayudarte a recuperar el dinero. Esta guía te enseña cómo evitar que eso pase.</p>
+  <div class="guide-meta">
+    <div class="meta-item">⏱ <strong>12 min</strong> de lectura</div>
+    <div class="meta-item">🎯 <strong>Nivel:</strong> Todos</div>
+    <div class="meta-item">⚠️ <strong>Importancia:</strong> Crítica</div>
+  </div>
+</div>
+
+<div class="content">
+  <div class="toc">
+    <div class="toc-title">📋 En esta guía</div>
+    <ul class="toc-list">
+      <li><a href="#amenazas"><span class="toc-num">1</span> Las 4 amenazas principales</a></li>
+      <li><a href="#contrasenas"><span class="toc-num">2</span> Contraseñas y 2FA — tu primera línea de defensa</a></li>
+      <li><a href="#wallets"><span class="toc-num">3</span> Tipos de wallets y cuándo usar cada una</a></li>
+      <li><a href="#seed"><span class="toc-num">4</span> La frase semilla — lo más importante</a></li>
+      <li><a href="#estafas"><span class="toc-num">5</span> Las estafas más comunes en cripto</a></li>
+      <li><a href="#checklist"><span class="toc-num">6</span> Checklist de seguridad completo</a></li>
+    </ul>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="amenazas">
+    <div class="section-num">Sección 1</div>
+    <h2>Las 4 amenazas principales</h2>
+    <p>Antes de protegerte, necesitás saber de qué te estás protegiendo. Estas son las formas más comunes de perder criptomonedas:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n red">1</div>
+        <div class="step-body"><h4>Hackeo de cuenta en exchange</h4><p>Alguien obtiene tu usuario y contraseña del exchange (Binance, Bybit, etc.) y vacía tu cuenta. Ocurre por contraseñas débiles, reutilización de contraseñas o phishing.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-n red">2</div>
+        <div class="step-body"><h4>Pérdida de la frase semilla</h4><p>Si usás una wallet personal y perdés o destruís el papel donde anotaste las 12 palabras, perdés acceso a tus cripto para siempre. No hay recuperación posible.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-n red">3</div>
+        <div class="step-body"><h4>Estafas y phishing</h4><p>Te mandan un link falso que parece Binance pero es una copia. Ingresás tus datos y te los roban. O alguien te convence de "invertir" en una plataforma falsa.</p></div>
+      </div>
+      <div class="step">
+        <div class="step-n red">4</div>
+        <div class="step-body"><h4>Error humano al transferir</h4><p>Copiás mal una dirección de wallet al hacer una transferencia. En cripto, si mandás a la dirección incorrecta el dinero se pierde para siempre — no hay "deshacer".</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="section" id="contrasenas">
+    <div class="section-num">Sección 2</div>
+    <h2>Contraseñas y 2FA — tu primera línea de defensa</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n green">✓</div>
+        <div class="step-body">
+          <h4>Usá una contraseña única y fuerte para cada exchange</h4>
+          <p>Nunca reutilices contraseñas. Si usan la misma contraseña en Binance y en otro sitio que hackean, pierden todo. Una contraseña fuerte tiene al menos 16 caracteres, letras, números y símbolos.</p>
+          <div class="tip">💡 Usá un gestor de contraseñas como Bitwarden (gratis) o 1Password. Así solo necesitás recordar una contraseña maestra.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n green">✓</div>
+        <div class="step-body">
+          <h4>Activá siempre el 2FA con Google Authenticator</h4>
+          <p>El 2FA (autenticación de dos factores) agrega un segundo paso al login — además de la contraseña, necesitás un código de 6 dígitos que cambia cada 30 segundos. <strong>Aunque alguien tenga tu contraseña, no puede entrar sin este código.</strong></p>
+          <div class="warn">⚠️ NO uses el 2FA por SMS. Los teléfonos pueden ser hackeados mediante "SIM swapping". Usá siempre Google Authenticator o Authy.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n green">✓</div>
+        <div class="step-body">
+          <h4>Guardá los códigos de backup del 2FA</h4>
+          <p>Cuando activás el 2FA, Binance te da códigos de emergencia. <strong>Imprimílos o escribílos en papel y guardalos en un lugar seguro.</strong> Si perdés el celular sin estos códigos, podés perder acceso a tu cuenta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="section" id="wallets">
+    <div class="section-num">Sección 3</div>
+    <h2>Tipos de wallets y cuándo usar cada una</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">🏦</div>
+        <div class="step-body">
+          <h4>Wallet del exchange (custodial) — para principiantes</h4>
+          <p>Tu cripto queda bajo custodia del exchange (Binance, Bybit). Es la más cómoda pero dependés de que el exchange no quiebre o sea hackeado. Para montos pequeños es perfectamente válida.</p>
+          <div class="tip">✅ Ideal para: Principiantes, montos menores a $500 USD, trading frecuente.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">📱</div>
+        <div class="step-body">
+          <h4>Wallet de software — Trust Wallet o Metamask</h4>
+          <p>Una app en el celular donde vos controlás las claves. Más seguro que el exchange pero si perdés el celular y la frase semilla, perdés todo. Gratuita.</p>
+          <div class="tip">✅ Ideal para: Montos medianos ($500-$2000), DeFi, NFTs.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">🔒</div>
+        <div class="step-body">
+          <h4>Hardware wallet — Ledger o Trezor</h4>
+          <p>Un dispositivo físico (como un pendrive) que guarda tus claves sin conexión a internet. Es la opción más segura. Cuesta entre $50-$150 USD.</p>
+          <div class="tip">✅ Ideal para: Montos grandes (+$2000), ahorro a largo plazo, máxima seguridad.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="section" id="seed">
+    <div class="section-num">Sección 4</div>
+    <h2>La frase semilla — lo más importante</h2>
+    <p>Si usás una wallet personal (no del exchange), cuando la creás te muestra <strong>12 o 24 palabras en inglés en un orden específico</strong>. Esa es tu "frase semilla" o "seed phrase". Es literalmente la llave de todo tu dinero.</p>
+
+    <div class="callout callout-warn">
+      <div class="callout-icon">🚨</div>
+      <div class="callout-body"><strong>Reglas absolutas de la frase semilla:</strong><br>• NUNCA la fotographies<br>• NUNCA la guardes en el celular, computadora o nube (Google Drive, iCloud, etc.)<br>• NUNCA se la des a nadie — ni al "soporte de Binance", ni a nadie<br>• SIEMPRE escribila en papel, a mano, con letra clara<br>• Guardá el papel en un lugar físico seguro (caja fuerte, lugar secreto)</div>
+    </div>
+
+    <div class="highlight">
+      <h4>💡 Método recomendado para guardar la frase semilla</h4>
+      <p>1. Escribila en dos papeles diferentes<br>2. Guardá uno en tu casa y otro en casa de un familiar de confianza o caja de seguridad<br>3. Nunca en el mismo lugar que la hardware wallet<br>4. Algunos usan placas de acero inoxidable para protegerla del fuego y el agua (busca "seed phrase metal backup")</p>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="section" id="estafas">
+    <div class="section-num">Sección 5</div>
+    <h2>Las estafas más comunes en cripto</h2>
+    <div class="scam-grid">
+      <div class="scam-card">
+        <h5>🎭 Phishing</h5>
+        <p>Te mandan un email o mensaje con un link que parece oficial pero es falso. El sitio copia exactamente el diseño de Binance. Ingresás tus datos y te los roban. <strong>Siempre verificá la URL antes de loguearte.</strong></p>
+      </div>
+      <div class="scam-card">
+        <h5>🤑 "Te duplico el Bitcoin"</h5>
+        <p>Cuentas falsas de Elon Musk, Vitalik Buterin o cualquier famoso prometiendo "mandame 1 BTC y te devuelvo 2". Es una estafa clásica que sigue funcionando. Nunca existe.</p>
+      </div>
+      <div class="scam-card">
+        <h5>💼 Plataformas de inversión falsas</h5>
+        <p>Te invitan a invertir en una plataforma con "retornos garantizados del 20% mensual". Al principio te dejan retirar algo para generar confianza. Después desaparecen con todo.</p>
+      </div>
+      <div class="scam-card">
+        <h5>😍 Romance scam</h5>
+        <p>Alguien te contacta en redes sociales, se hace tu amigo o pareja durante semanas, y después te pide invertir en cripto con ella/él. Todo es falso — la persona y la plataforma.</p>
+      </div>
+      <div class="scam-card">
+        <h5>📞 Soporte falso</h5>
+        <p>Alguien se hace pasar por el soporte de Binance o de tu wallet y te pide la frase semilla para "verificar tu cuenta". El soporte NUNCA pide la frase semilla. Jamás.</p>
+      </div>
+      <div class="scam-card">
+        <h5>🪙 Pump and dump</h5>
+        <p>Un grupo compra masivamente una criptomoneda desconocida, el precio sube, invitás a otros a comprar, y cuando ellos entran el grupo vende todo. El precio colapsa y los últimos en entrar pierden todo.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-tip">
+      <div class="callout-icon">✅</div>
+      <div class="callout-body"><strong>La regla de oro anti-estafas:</strong> Si algo parece demasiado bueno para ser verdad, es una estafa. Las ganancias garantizadas no existen en ningún mercado. Nadie regala dinero.</div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="section" id="checklist">
+    <div class="section-num">Sección 6</div>
+    <h2>Checklist de seguridad completo</h2>
+    <p>Repasá esta lista y asegurate de haber hecho todo:</p>
+
+    <div class="checklist">
+      <div class="check-item"><div class="check-icon">✅</div><div class="check-body"><h5>2FA activado con Google Authenticator</h5><p>No con SMS. Si no lo tenés, activalo ahora antes de seguir.</p></div></div>
+      <div class="check-item"><div class="check-icon">✅</div><div class="check-body"><h5>Contraseña única y fuerte para el exchange</h5><p>Más de 16 caracteres, no usada en ningún otro sitio.</p></div></div>
+      <div class="check-item"><div class="check-icon">✅</div><div class="check-body"><h5>Códigos de backup del 2FA guardados en papel</h5><p>Por si perdés el celular.</p></div></div>
+      <div class="check-item"><div class="check-icon">✅</div><div class="check-body"><h5>Email del exchange tiene 2FA activado</h5><p>Si hackean tu email, hackean tu exchange. Protegé también el email.</p></div></div>
+      <div class="check-item"><div class="check-icon">✅</div><div class="check-body"><h5>Frase semilla anotada en papel (si usás wallet personal)</h5><p>En dos copias, en lugares separados, nunca digital.</p></div></div>
+      <div class="check-item"><div class="check-icon">✅</div><div class="check-body"><h5>Nunca ingresás datos en links de emails</h5><p>Siempre escribís la URL directamente en el navegador.</p></div></div>
+      <div class="check-item"><div class="check-icon">✅</div><div class="check-body"><h5>Verificás tres veces la dirección antes de transferir</h5><p>Copia, pega y comparás el principio y el final de la dirección.</p></div></div>
+      <div class="check-item"><div class="check-icon">✅</div><div class="check-body"><h5>No invertís más de lo que podés perder</h5><p>La protección más importante de todas.</p></div></div>
+    </div>
+  </div>
+
+  <div class="cta-final">
+    <h3>Tu seguridad empieza por elegir un exchange confiable 🔐</h3>
+    <p>Binance es el exchange con el historial de seguridad más sólido del mercado. Activá el 2FA apenas creás tu cuenta.</p>
+    <a href="https://www.binance.com/es/register?ref=TUREFCODE" target="_blank" class="btn-blue">Crear cuenta segura en Binance →</a>
+  </div>
+
+  <div class="guides-nav">
+    <div style="width:100%;font-family:'Cabinet Grotesk',sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--text2);margin-bottom:8px;">Otras guías</div>
+    <a href="guia-trading.html" class="guide-link"><div class="guide-link-label">Guía #4</div><div class="guide-link-title">← Cómo leer gráficos de trading</div></a>
+    <a href="guia-sp500.html" class="guide-link"><div class="guide-link-label">Guía #6</div><div class="guide-link-title">Qué es el S&P 500 y cómo invertir →</div></a>
+    <a href="guia-bitcoin.html" class="guide-link"><div class="guide-link-label">Guía #1</div><div class="guide-link-title">Cómo comprar Bitcoin →</div></a>
+  </div>
+</div>
+
+<footer style="border-top:1px solid var(--border2);padding:32px 48px;text-align:center;position:relative;z-index:1;">
+  <p style="font-size:13px;color:var(--text2);">© 2026 Invertir sin saber invertir · Hecho con ❤️ by <strong style="color:var(--accent-light)">JuanFarias</strong></p>
+  <p style="font-size:11px;color:rgba(107,127,160,0.5);margin-top:8px;">Este contenido es solo informativo y no constituye asesoramiento financiero.</p>
+</footer>
+</body>
+</html>
