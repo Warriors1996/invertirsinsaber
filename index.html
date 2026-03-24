@@ -872,21 +872,12 @@
 <!-- BLOG -->
 <div class="container" id="blog">
   <div class="section-eyebrow">Blog</div>
-  <div class="section-title">Artículos recientes</div>
-  <p class="section-desc">Análisis, guías y noticias del mundo de las inversiones escritas en lenguaje simple.</p>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
-
-    <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:16px;overflow:hidden;transition:border-color 0.2s,transform 0.2s;cursor:pointer;" onmouseover="this.style.borderColor='rgba(59,130,246,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'">
-      <div style="background:linear-gradient(135deg,#1a2744,#0d1525);padding:32px 24px;border-bottom:1px solid var(--border2);">
-        <div style="font-size:28px;margin-bottom:8px;">₿</div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);margin-bottom:8px;">Bitcoin · 15 Mar 2026</div>
-      </div>
-      <div style="padding:22px 24px;">
-        <h4 style="font-family:'Cabinet Grotesk',sans-serif;font-size:17px;font-weight:800;margin-bottom:10px;line-height:1.3;">Bitcoin cae 10% en marzo: ¿es momento de comprar?</h4>
-        <p style="font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:16px;">Las correcciones del 10-20% son normales en ciclos alcistas. Analizamos si este es un buen punto de entrada o si viene más caída.</p>
-        <div style="font-size:12px;color:var(--accent-light);font-weight:600;">Leer artículo →</div>
-      </div>
-    </div>
+  <div class="section-title">Noticias cripto en tiempo real</div>
+  <p class="section-desc">Últimas noticias del mundo cripto, actualizadas automáticamente.</p>
+  <div id="news-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+    <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:24px;text-align:center;color:var(--text2);font-size:13px;">⏳ Cargando noticias...</div>
+  </div>
+</div>
 
     <div style="background:var(--bg2);border:1px solid var(--border2);border-radius:16px;overflow:hidden;transition:border-color 0.2s,transform 0.2s;cursor:pointer;" onmouseover="this.style.borderColor='rgba(59,130,246,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'">
       <div style="background:linear-gradient(135deg,#1a2e1a,#0d1525);padding:32px 24px;border-bottom:1px solid var(--border2);">
@@ -1052,6 +1043,33 @@ function toggleFaq(el) {
 }
 
 calcAcciones();
+  // NOTICIAS EN TIEMPO REAL - CoinGecko
+async function loadNews() {
+  try {
+    const res = await fetch('https://api.coingecko.com/api/v3/news?per_page=6');
+    const data = await res.json();
+    const grid = document.getElementById('news-grid');
+    if (!data.data || data.data.length === 0) {
+      grid.innerHTML = '<div style="color:var(--text2);font-size:13px;grid-column:1/-1;text-align:center;">No se pudieron cargar las noticias.</div>';
+      return;
+    }
+    grid.innerHTML = data.data.slice(0,6).map(n => `
+      <a href="${n.url}" target="_blank" style="background:var(--bg2);border:1px solid var(--border2);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;display:block;transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='rgba(59,130,246,0.3)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'">
+        ${n.thumb_2x ? `<img src="${n.thumb_2x}" style="width:100%;height:140px;object-fit:cover;" onerror="this.style.display='none'"/>` : `<div style="width:100%;height:140px;background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(59,130,246,0.03));display:flex;align-items:center;justify-content:center;font-size:32px;">📰</div>`}
+        <div style="padding:20px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent-light);margin-bottom:8px;">${n.author || 'CoinGecko'} · ${new Date(n.created_at*1000).toLocaleDateString('es-AR',{day:'numeric',month:'short',year:'numeric'})}</div>
+          <h4 style="font-family:'Cabinet Grotesk',sans-serif;font-size:15px;font-weight:800;margin-bottom:8px;line-height:1.4;color:var(--text)">${n.title}</h4>
+          <div style="font-size:12px;color:var(--accent-light);font-weight:600;">Leer artículo →</div>
+        </div>
+      </a>
+    `).join('');
+  } catch(e) {
+    document.getElementById('news-grid').innerHTML = '<div style="color:var(--text2);font-size:13px;grid-column:1/-1;text-align:center;">Error cargando noticias.</div>';
+  }
+}
+
+loadNews();
+setInterval(loadNews, 300000);
 </script>
 </body>
 </html>
